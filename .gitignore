@@ -1,0 +1,32 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+**/secrets.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# Nuxt / Node
+node_modules/
+.nuxt/
+.output/
+dist/
+
+# Local data and photos
+*.db
+*.sqlite*
+uploads/
+tmp/
+*.pt
+*.pth
+*.onnx
+
+# Editor and OS
+.DS_Store
+.idea/
+.vscode/
