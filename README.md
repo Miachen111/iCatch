@@ -17,7 +17,7 @@
 | 關聯資料 | Neon PostgreSQL；Python 端預計使用 SQLModel | D |
 | 原照與標記圖 | Neon Object Storage | D 管理存取 |
 
-目前只建立專案目錄和共同契約；**尚未建立 Nuxt、FastAPI、資料庫、儲存 bucket 或公開 Demo 網址**。Neon 提供 PostgreSQL 和檔案儲存；未來 Nuxt 與 FastAPI 仍需各自部署到能運行程式的服務。
+目前已有共同契約和 A 的本地照片判讀函式（清晰度／曝光、六視角分類與車外車牌偵測）；模型權重尚未提供，實際視角／車牌判斷需設定權重後才能啟用。**尚未建立 Nuxt、FastAPI、資料庫、儲存 bucket 或公開 Demo 網址**。Neon 提供 PostgreSQL 和檔案儲存；未來 Nuxt 與 FastAPI 仍需各自部署到能運行程式的服務。
 
 ## 目錄
 
@@ -40,7 +40,7 @@ demo_data/                有使用權的小型示範資料與預期結果
 ## 下一步
 
 1. 全組審閱 `docs/contracts.md`，確認六視角、輸出狀態及「待人工」的處理方式。
-2. A／B／C 開始各自的本機判讀函式；E 開始 Nuxt 畫面與假資料。
+2. A 以授權照片校準本機品質函式，並與 E 協調拍照元件；B／C 開始各自的本機判讀函式，E 開始 Nuxt 畫面與假資料。
 3. D 建 FastAPI 骨架，使用假結果串通照片、事件、任務與驗收。
 4. D 測試 Neon PostgreSQL 和 Object Storage 的上傳／讀回，再建立線上測試版。
 
