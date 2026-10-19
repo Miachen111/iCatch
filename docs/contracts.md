@@ -25,7 +25,7 @@ check_quality(photo_path: str, expected_view: str) -> QualityResult
 - `retake`：品質不合格，回一個最優先的原因與使用者提示；不進 B／C。
 - `manual_review`：無法可靠判斷，先要求補拍；仍不確定則交人工，不當作 `accepted`。
 
-必要欄位：`status`、`reason_code`（可空）、`message`。可用原因代碼先定 `blur`、`dark`、`overexposed`、`too_near`、`too_far`、`cropped`、`no_vehicle`、`uncertain`；其他原因代碼需先更新契約。對前／後車內照不套用車外「車輛主體入鏡」檢查。
+必要欄位：`status`、`reason_code`（可空）、`message`。可用原因代碼為 `blur`、`dark`、`overexposed`、`too_near`、`too_far`、`cropped`、`no_vehicle`、`wrong_view`、`plate_not_found`、`uncertain`。六個視角都須分類並與 `expected_view` 比對；四個車外視角另須偵測到車牌。對前／後車內照不套用車外「車輛主體入鏡」及車牌檢查。模型未設定、逾時或低信心時不可當作合格，應回 `manual_review`。
 
 ## B：取還車疑似車損
 
